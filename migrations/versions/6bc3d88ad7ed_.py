@@ -1,7 +1,7 @@
 """empty message
 
 Revision ID: 6bc3d88ad7ed
-Revises: 
+Revises:
 Create Date: 2024-02-10 15:23:19.386448
 
 """
@@ -43,7 +43,7 @@ def upgrade():
     op.create_table('tags',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(length=80), nullable=False),
-    sa.Column('store_id', sa.String(), nullable=False),
+    sa.Column('store_id', sa.Integer(), nullable=False),
     sa.ForeignKeyConstraint(['store_id'], ['stores.id'], ),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('name')
